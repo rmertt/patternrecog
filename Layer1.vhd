@@ -27,7 +27,6 @@ begin
                 end loop;
                 sum := sum + biases(n);
                 
-                -- ReLU uygulanıyor: negatifse sıfırla
                 if sum < 0 then
                     outputs(n) <= 0;
                 else
