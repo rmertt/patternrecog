@@ -7,14 +7,14 @@ use work.Types.all;
 
 entity Neuron is
     generic (
-        N : integer := 784  -- giriş sayısı
+        N : integer := 784  
     );
     port (
         clk     : in  std_logic;
         inputs  : in  integer_vector(0 to N-1);
         weights : in  integer_vector(0 to N-1);
         bias    : in  integer;
-        output_y : out integer  -- ReLU sonrası çıkış (Q4)
+        output_y : out integer  
     );
 end Neuron;
 
