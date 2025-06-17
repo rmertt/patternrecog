@@ -9,7 +9,6 @@ end Top_tb;
 
 architecture behavior of Top_tb is
 
-    -- Bileşeni test edilecek üst modül
     component Top
         Port (
             clk    : in  std_logic;
@@ -21,7 +20,7 @@ architecture behavior of Top_tb is
         );
     end component;
 
-    -- Testbench sinyalleri
+    -- tb signals
     signal clk_tb     : std_logic := '0';
 	signal input_data_tb : integer_vector(0 to 783) := (others => 0);
 	signal layer1_out_dbg : integer_vector(0 to 127);
@@ -42,7 +41,7 @@ begin
 			layer6_out  => layer6_out
         );
 
-    -- Saat üretimi: 10 ns periyot
+    -- clock process: 10 ns 
     clk_process : process
     begin
         while now < 2000 ns loop
@@ -57,6 +56,7 @@ begin
     stimulus : process
     begin
         wait for 10 ns;
+	    		-- input data which is 2
 			input_data_tb(0) <= 0;
 			input_data_tb(1) <= 0;
 			input_data_tb(2) <= 0;
